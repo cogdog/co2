@@ -1,6 +1,6 @@
 # Single Page Update Screen for CO2 Data
 
-By request of Mike Kelly for a museum kiosk to display data on C02 emissions measure at Manau Loa and reported by the [NOAA Earth Science Research Data trends site](http://www.esrl.noaa.gov/gmd/ccgg/trends/index.html).
+By request of Mike Kelly for a museum iPad kiosk to display data on C02 emissions measure at Manau Loa and reported by the [NOAA Earth Science Research Data trends site](http://www.esrl.noaa.gov/gmd/ccgg/trends/index.html).
 
 The RSS Feed http://www.esrl.noaa.gov/gmd/webdata/ccgg/trends/rss.xml contains a mixture of monthly and weekly updates; it is the Weekly one desired because they give the data from the current week, a year ago, and 10 years ago. A sample entry:
 
@@ -28,6 +28,9 @@ also available via an alias
 http://query.yahooapis.com/v1/public/yql/cogdog/c02
 
 This makes the parsing simple, we just need to populate a div with the value of the 1st result item. To make ot self updating, a JavaScript `setTimeout()` function is used to reload the page every 24 hours.
+
+You can see it in action at https://cogdog.github.io/co2/
+
 
 
 
