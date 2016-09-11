@@ -1,7 +1,7 @@
 <html>
   <head><title>Weekly CO2 Mauna Loa Updates from ESRL</title>
   <style type='text/css'>
-    #results { width: 98%; margin: 10% auto;  overflow: auto; text-align:center; font-size: 3em; font-size: 5vw; }
+    #results { width: 98%; margin: 10% auto;  overflow: auto; text-align:center; font-size: 3em; font-size: 4.5vw; }
     #results .stamp {font-size: 0.3em; font-style:italic; color:#999;}
   </style>
   
@@ -13,7 +13,7 @@
       var d = new Date();
       
       // call the YQL statement to fetch latest data
-      document.getElementById('results').innerHTML = o.query.results.item.description + ' <p class="stamp">last updated: ' + d.toLocaleString() + '</p>' ;
+      document.getElementById('results').innerHTML = o.query.results.item.description + ' <p class="stamp">last checked: ' + d.toLocaleString() + '</p>' ;
     }
     
     // reload the page daily delay = 86400000 milliseconds
