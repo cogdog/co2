@@ -1,0 +1,82 @@
+<html>
+  <head><title>Weekly CO2 Mauna Loa Updates from ESRL</title>
+  <style type='text/css'>
+    #results { width: 98%; margin: 10% auto;  overflow: auto; text-align:center; font-size: 4vw; }
+    #results .stamp {font-size: 1.8vw; font-style:italic; color:#999;}
+  </style>
+  
+    <script type='text/javascript'>
+    // The results should contain just 1 item with a description value
+    function output_latest_co2_stats(o) {
+    
+      // grab a date object so we can put a time stamp on output
+      var d = new Date();
+      
+      // call the YQL statement to fetch latest data
+      document.getElementById('results').innerHTML = o.query.results.item.description + ' <p class="stamp">last updated: ' + d.toLocaleString() + '</p>' ;
+    }
+    
+    // reload the page daily delay = 86400000 milliseconds
+    setTimeout(function() { window.location=window.location;}, 86400000);
+    </script>
+    
+    
+  </head>
+  <body>
+
+    <div id='results'></div>
+    <script src="jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	
+		 /* 
+		 Use Earth System Research Lab Global Greenhouse Gas trends RSS Feed
+         http://www.esrl.noaa.gov/gmd/webdata/ccgg/trends/rss.xml 
+         
+         Convert feed to JSON with https://rss2json.com/ since original use Yahoo Query Language is dead 
+         */
+
+		// Let's get some data
+		
+		 $.ajax({
+			type: 'GET',
+			dataType: 'json',
+			url: 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.esrl.noaa.gov%2Fgmd%2Fwebdata%2Fccgg%2Ftrends%2Frss.xml',
+			timeout: 10000,
+			
+			success: function(data, textStatus ) {
+				// load the data array
+				co2data = data.items;
+				
+				// flag set
+				var found = false;
+				
+				for (var i = 0; i < co2data.length; ++i) {
+					// look for Weekly Update in title
+					console.log(co2data[i].title);
+					if ( co2data[i].title.startsWith("Weekly") ) {
+						// found first match, use it. Set date object
+						 var d = new Date();
+						 
+						 // update output
+						 $('#results').html(co2data[i].description + ' <p class="stamp">last updated: ' + d.toLocaleString() + '</p>') ;
+						 
+						 // set to reload in a day
+						setTimeout(function() { window.location=window.location;}, 86400000);
+						
+						found = true;
+						break; // exit now!
+					}
+				}
+				// if we got this far we failed
+				if (!found) $('#results').text('Weekly C02 Data not found');			
+			
+			  },
+			     fail: function(xhr, textStatus, errorThrown){
+       				$('#results').text('Failed to retrieve data stream. Check internet connection?');
+       		  }
+       		});		
+	});	
+	</script>
+  </body>
+</html>
