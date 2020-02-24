@@ -54,7 +54,7 @@
     
     <div id="credits">
     
-    Image updated hourly from<a href="https://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/mkcam.jpg" target="_blank"> Mauna Kea web cam view of Mauna Loa</a>
+    Background image updated from <a href="https://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/mkcam.jpg" target="_blank"> Mauna Kea web cam view of Mauna Loa</a>
     
     </div>
     
@@ -76,12 +76,6 @@
 		
 		// set to data once a day		
 		var myDailyRoutine = setTimeout(update_co2_data, 86400000);
-		
-		// update background hourly
-		setTimeout(function(){ $.backstretch(["https://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/mkcam.jpg"]); }, 3600);
-		
-
-
 		
 		function update_co2_data() {
 		
