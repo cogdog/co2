@@ -33,10 +33,10 @@ My original solution for this demonstration was to use Yahoo Query Language (YQL
 
 Sadly, as the web breaks, when Verizon bought Yahoo, they axed YQL.
 
-This was re-written to use [rss2json](https://rss2json.com/) and works as it did before. The display was meant to be simple; if there is a way to fetch images of the volcano, this would be fun to put in the background.
+This was re-written to use [rss2json](https://rss2json.com/) and works as it did before.
 
 
-You can see it in action at https://cogdog.github.io/co2/
+You can see it in action at https://cogdog.github.io/co2/ or this version that uses a background image from the Mauna Kea Webcam https://cogdog.github.io/co2/cam.html
 
 
 

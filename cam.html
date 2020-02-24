@@ -1,8 +1,30 @@
 <html>
   <head><title>Weekly CO2 Mauna Loa Updates from ESRL</title>
   <style type='text/css'>
-    #results { width: 98%; margin: 10% auto;  overflow: auto; text-align:center; font-size: 4vw; }
+    #wrapper {width: 90%; margin: 5% auto;}
+    #results { background-color:#fff; padding:1em; opacity:0.7; text-align:center; font-size: 3.5vw; }
     #results .stamp {font-size: 1.8vw; font-style:italic; color:#999;}
+    
+    
+    #credits {
+    	font-family: Helvetica, arial, sans-serif;
+		background-color:#000;
+		padding: 4px;
+		margin:0;
+		position:absolute;
+  		bottom:0;
+  		left: 0;
+   		width:100%;
+   		line-height: 1.5em;   /* Height of the footer */
+   		color: white;
+		font-weight: bold;
+		font-size: 0.9em;	
+		opacity: 0.8;
+		text-align:center;
+	}
+	
+	 #credits a,  #credits a:visited { color: red; text-decoration:none; }
+	 #credits a:hover { color: red; text-decoration:underline; }
   </style>
   
     <script type='text/javascript'>
@@ -24,7 +46,19 @@
   </head>
   <body>
 
-    <div id="results"><img width="200" height="200" alt="Loading..." src="spinner.gif" id="loading"></div>
+	<div id="wrapper">
+    	<div id="results">
+    		<img width="200" height="200" alt="Loading..." src="spinner.gif" id="loading">
+    	</div>
+    </div>
+    
+    <div id="credits">
+    
+    Image updated hourly from<a href="https://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/mkcam.jpg" target="_blank"> Mauna Kea web cam view of Mauna Loa</a>
+    
+    </div>
+    
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script>
 	$(document).ready(function(){
@@ -42,6 +76,10 @@
 		
 		// set to data once a day		
 		var myDailyRoutine = setTimeout(update_co2_data, 86400000);
+		
+		// update background hourly
+		setTimeout(function(){ $.backstretch(["https://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/mkcam.jpg"]); }, 3600);
+		
 
 
 		
@@ -73,6 +111,7 @@
 							 $('#results').html(co2data[i].description + ' <p class="stamp">last updated: ' + d.toLocaleString() + '</p>') ;
 						 						
 							found = true;
+							$.backstretch(["https://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/mkcam.jpg"]);
 							break; // exit now!
 						}
 					}
@@ -89,5 +128,10 @@
 	});	
 	</script>
 	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.1.18/jquery.backstretch.min.js"></script>
+	<script>
+		$.backstretch(["https://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/mkcam.jpg"]);
+	</script>
+
   </body>
 </html>
