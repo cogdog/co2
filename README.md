@@ -8,7 +8,9 @@ by Alan Levine https://cog.dog or http://cogdogblog.com/
 [![Support me on Patreon](http://cogdog.github.io/images/badge-patreon.png)](https://patreon.com/cogdog) [![Support me on via PayPal](http://cogdog.github.io/images/badge-paypal.png)](https://paypal.me/cogdog)
 ----- 
 
-By request of Mike Kelly for a museum iPad kiosk to display data on C02 emissions measure at Manau Loa and reported by the [NOAA Earth Science Research Data trends site](http://www.esrl.noaa.gov/gmd/ccgg/trends/index.html).
+By request of Mike Kelly for a museum iPad kiosk to display data on C02 emissions measure at Manau Loa and reported by the [NOAA Earth Science Research Data trends site](http://www.esrl.noaa.gov/gmd/ccgg/trends/index.html). This creates a simple standalone display like:
+
+[![Basic View](plain.jpg "Basic view of output data")](https://cogdog.github.io/co2/)
 
 The RSS Feed http://www.esrl.noaa.gov/gmd/webdata/ccgg/trends/rss.xml contains a mixture of monthly and weekly updates; it is the Weekly one desired because they give the data from the current week, a year ago, and 10 years ago. A sample entry:
 
@@ -33,10 +35,12 @@ My original solution for this demonstration was to use Yahoo Query Language (YQL
 
 Sadly, as the web breaks, when Verizon bought Yahoo, they axed YQL.
 
-This was re-written to use [rss2json](https://rss2json.com/) and works as it did before.
+This was re-written to use [rss2json](https://rss2json.com/) and works as it did before (see [blog post](https://cogdogblog.com/2020/02/old-simple-machine/)).
 
 
 You can see it in action at https://cogdog.github.io/co2/ or this version that uses a background image from the Mauna Kea Webcam https://cogdog.github.io/co2/cam.html
+
+[![Pretty View](pretty.jpg "Pretty view of output data on webcam image")](https://cogdog.github.io/co2/cam.html)
 
 
 
