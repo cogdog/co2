@@ -105,7 +105,7 @@
 							 $('#results').html(co2data[i].description + ' <p class="stamp">last updated: ' + d.toLocaleString() + '</p>') ;
 						 						
 							found = true;
-							$.backstretch(["https://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/mkcam.jpg"]);
+							$.backstretch(["https://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/mkcam.jpg"], {alignY: 'top'} );
 							break; // exit now!
 						}
 					}
@@ -124,7 +124,7 @@
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.1.18/jquery.backstretch.min.js"></script>
 	<script>
-		$.backstretch(["https://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/mkcam.jpg"]);
+		$.backstretch(["https://www.esrl.noaa.gov/gmd/webdata/mlo/webcam/mkcam.jpg"], {alignY: 'top'} );
 	</script>
 
   </body>
