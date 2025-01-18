@@ -42,6 +42,12 @@ You can see it in action at https://cogdog.github.io/co2/ or this version that u
 
 [![Pretty View](pretty.jpg "Pretty view of output data on webcam image")](https://cogdog.github.io/co2/cam.html)
 
+## Update Notes
+
+* Jan 17 2025: The NOAA web cams seem down, have switched the Webcam version to use cams from the USGS Hawaiian Volcano Observatory
+* Dec 03 2023: Added the footer to webcam version
+* Feb 24 2020: redesigned the data request due to change death of Yahoo Query language, switched to use of RSS feed converted o JSON, also added the web cam version. More in blog post [An Old, Simple Machine Fixed](https://cogdogblog.com/2020/02/old-simple-machine/)
+* Aug 29 2016: First version published
 
 
 
